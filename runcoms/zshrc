@@ -11,7 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # USER CONFIG
-export EDITOR="$SUBLIME --wait"
+export EDITOR='vim'
 export VISUAL=$EDITOR
 
 # Customize to your needs...
