@@ -125,3 +125,4 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 
 # sublime alias
 alias st="subl"
+alias where="echo $PWD"
