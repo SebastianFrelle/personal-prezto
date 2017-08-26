@@ -14,6 +14,9 @@ fi
 export EDITOR='vim'
 export VISUAL=$EDITOR
 
+# USER CONFIG for antlr
+export CLASSPATH='.:/usr/local/Cellar/antlr/4.5.2/antlr-4.5.2-complete.jar:$CLASSPATH"
+
 # Customize to your needs...
 # Path to your oh-my-zsh installation.
 # export ZSH=/Users/zhelvisdanas/.oh-my-zsh
@@ -70,7 +73,8 @@ export VISUAL=$EDITOR
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin:/opt/local/bin:/opt/local/sbin"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 
@@ -103,26 +107,47 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin"
 # autoload -U promptinit
 # promptinit
 # USER CONFIG
-DEFAULT_USER="zhelvisdanas"
+# DEFAULT_USER="zhelvisdanas"
+
+autoload -Uz promptinit
+autoload -Uz compinit && compinit -i
+promptinit
+prompt sorin
 
 # USER CONFIG
-# go config
-export GOPATH=$HOME/go
-PATH=$PATH:$GOPATH/bin
 
 # USER CONFIG
-# rbenv autoload
-eval "$(rbenv init -)"
+# thefuck alias
 eval "$(thefuck --alias)"
 
 # USER CONFIG
 # aliases
-alias bag-kage='echo 🍰'
+alias bag_kage='echo 🍰'
 alias brewup='echo ">>updating && upgrading brew<<"; brew update && brew upgrade'
-
-#rbenv ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
 
 # sublime alias
 alias st="subl"
 alias where="echo $PWD"
+
+# todo.sh alias
+alias t='todo.sh -d ~/.todo.cfg'
+
+# open new tab in same working directory 
+# obv only works for iterm
+alias a='open . -a iterm'
+
+alias dtu_ascii='echo "DTU\n<~>\n<~>\n<~>"'
+
+export PATH="$PATH:/usr/local/sbin"
+export WORKPATH="$HOME/work"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Add rust cargo to path
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Activate zsh-nvm
+source ~/.zsh-nvm/zsh-nvm.plugin.zsh
+
+fpath=(~/.zsh/completion $fpath)
