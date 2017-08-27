@@ -115,12 +115,6 @@ promptinit
 prompt sorin
 
 # USER CONFIG
-
-# USER CONFIG
-# thefuck alias
-eval "$(thefuck --alias)"
-
-# USER CONFIG
 # aliases
 alias bag_kage='echo 🍰'
 alias brewup='echo ">>updating && upgrading brew<<"; brew update && brew upgrade'
@@ -146,8 +140,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # Add rust cargo to path
 export PATH="$HOME/.cargo/bin:$PATH"
-
-# Activate zsh-nvm
-source ~/.zsh-nvm/zsh-nvm.plugin.zsh
 
 fpath=(~/.zsh/completion $fpath)
